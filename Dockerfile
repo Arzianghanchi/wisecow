@@ -1,28 +1,20 @@
+# Use the official Python image.
 FROM python:3.9-slim
 
-# Set the working directory
+# Set the working directory in the container.
 WORKDIR /app
 
-# Copy the application code
-COPY app.py /app/
-COPY requirements.txt /app/
-COPY wisecow.sh /app/
+# Copy the requirements file into the container.
+COPY requirements.txt .
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Install the dependencies.
+RUN pip install -r requirements.txt
 
-# Install necessary Linux packages
-RUN apt-get update && apt-get install -y \
-    fortune \
-    cowsay \
-    netcat \
-    && rm -rf /var/lib/apt/lists/*
+# Copy the rest of the application code into the container.
+COPY . .
 
-# Make wisecow.sh executable
-RUN chmod +x /app/wisecow.sh
+# Expose the port that the application will run on.
+EXPOSE 80
 
-# Expose the application port
-EXPOSE 4499
-
-# Start the application
-CMD ["/app/wisecow.sh"]
+# Define the command to run the application.
+CMD ["python", "app.py"]
