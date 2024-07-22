@@ -23,6 +23,7 @@ This project sets up a CI/CD pipeline for deploying the Wisecow application usin
 ├── k8s
 │   ├── deployment.yaml
 │   └── service.yaml
+|── app.py
 ├── Dockerfile
 ├── kind-config.yaml
 └── wisecow.sh
