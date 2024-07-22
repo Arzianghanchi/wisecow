@@ -23,6 +23,8 @@ This project sets up a CI/CD pipeline for deploying the Wisecow application usin
 ├── k8s
 │   ├── deployment.yaml
 │   └── service.yaml
+|── ingress.yaml
+|── app.py
 ├── Dockerfile
 ├── kind-config.yaml
 └── wisecow.sh
@@ -116,6 +118,7 @@ These files define how the Wisecow application is deployed and exposed within th
           run: |
             kubectl apply -f k8s/deployment.yaml
             kubectl apply -f k8s/service.yaml
+            kubectl apply -f k8s/ingress.yaml
   ```
 
 ### Kind Configuration
@@ -232,6 +235,7 @@ These files define how the Wisecow application is deployed and exposed within th
      ```bash
      kubectl apply -f k8s/deployment.yaml
      kubectl apply -f k8s/service.yaml
+     kubectl apply -f k8s/ingress.yaml
      ```
 
 6. **Access the Application**:
@@ -247,5 +251,3 @@ These files define how the Wisecow application is deployed and exposed within th
 - **If the application is not accessible**: Verify that the service and deployment configurations are correct and that the Docker image is correctly built and pushed.
 
 ---
-
-This README provides a comprehensive guide for setting up and deploying the Wisecow application using Docker and Kubernetes. Adjust file paths and configurations as necessary for your specific environment.
