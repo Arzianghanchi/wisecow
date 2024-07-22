@@ -248,5 +248,3 @@ These files define how the Wisecow application is deployed and exposed within th
 - **If the application is not accessible**: Verify that the service and deployment configurations are correct and that the Docker image is correctly built and pushed.
 
 ---
-
-This README provides a comprehensive guide for setting up and deploying the Wisecow application using Docker and Kubernetes. Adjust file paths and configurations as necessary for your specific environment.
