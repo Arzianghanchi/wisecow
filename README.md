@@ -23,6 +23,7 @@ This project sets up a CI/CD pipeline for deploying the Wisecow application usin
 ├── k8s
 │   ├── deployment.yaml
 │   └── service.yaml
+|── ingress.yaml
 |── app.py
 ├── Dockerfile
 ├── kind-config.yaml
@@ -117,6 +118,7 @@ These files define how the Wisecow application is deployed and exposed within th
           run: |
             kubectl apply -f k8s/deployment.yaml
             kubectl apply -f k8s/service.yaml
+            kubectl apply -f k8s/ingress.yaml
   ```
 
 ### Kind Configuration
@@ -233,6 +235,7 @@ These files define how the Wisecow application is deployed and exposed within th
      ```bash
      kubectl apply -f k8s/deployment.yaml
      kubectl apply -f k8s/service.yaml
+     kubectl apply -f k8s/ingress.yaml
      ```
 
 6. **Access the Application**:
